@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Student Data{% endblock %}
+
+{% block body %}
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h5 class="card-header fw-bold">Edit Student Data</h5>
+                    <div class="card-body">
+                        {{ include('student/_form.html.twig', {'button_label': 'Update'}) }}
+                        <a class="btn btn-secondary btn-sm mt-5" href="{{ path('student_index') }}"><i class="far fa-arrow-alt-circle-left"></i> Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

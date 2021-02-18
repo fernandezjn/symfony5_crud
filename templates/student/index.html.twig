@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Simple CRUD{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h5 class="fw-bold align-middle d-inline">List of Students</h5>
+                        <a class="btn btn-primary btn-sm float-end d-inline" href="{{ path('student_new') }}"><i class="far fa-plus-square me-1"></i> Add New Student</a>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Student Number</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Year Level</th>
+                                <th>Actions</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for student in students %}
+                                <tr>
+                                    <td>{{ student.id }}</td>
+                                    <td>{{ student.studentNumber }}</td>
+                                    <td>{{ student.name }}</td>
+                                    <td>{{ student.course }}</td>
+                                    <td>{{ student.yearLevel }}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm d-inline" href="{{ path('student_show', {'id': student.id}) }}"><i class="far fa-eye"></i> Show</a>
+                                        <a class="btn btn-secondary btn-sm d-inline" href="{{ path('student_edit', {'id': student.id}) }}"><i class="far fa-edit"></i> Edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">No Records Found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

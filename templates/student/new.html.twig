@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add New Student{% endblock %}
+
+{% block body %}
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h5 class="card-header fw-bold">Add New Student</h5>
+                    <div class="card-body">
+                        {{ include('student/_form.html.twig') }}
+                        <a class="btn btn-secondary btn-sm mt-5" href="{{ path('student_index') }}"><i class="far fa-arrow-alt-circle-left"></i> Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
